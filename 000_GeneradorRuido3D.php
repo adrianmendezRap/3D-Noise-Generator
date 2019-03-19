@@ -15,12 +15,12 @@ ini_set('max_execution_time', 0);
 // Variables array
 $cols = 640;
 $row = 360;
-$frames = 40;
+$frames = 20;
 
 // Valores a tener en cuenta
 $minval = 0;
 $maxval = 255;
-$maxder = 8;
+$maxder = 15;
 
 // Array de salida
 $output = array();
