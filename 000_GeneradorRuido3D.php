@@ -14,8 +14,8 @@ ini_set('max_execution_time', 0);
 
 // Variables array
 $cols = 640;
-$row = 360;
-$frames = 20;
+$row = 427;
+$frames = 1;
 
 // Valores a tener en cuenta
 $minval = 0;
@@ -200,9 +200,9 @@ for ($frame_counter=0; $frame_counter < $frames; $frame_counter++) {
 			// Una vez finalizada la obtencion de los valores revisamos el contador de sumas realizadas
 			// Si sale 0 significa que estamos en el primer pixel a general asi que le damos unos valores random como inicio
 			if ($count_sum == 0){
-				$output[$frame_counter][$row_counter][$col_counter]["R"] = rand(0, 255);
-				$output[$frame_counter][$row_counter][$col_counter]["G"] = rand(0, 255);
-				$output[$frame_counter][$row_counter][$col_counter]["B"] = rand(0, 255);
+				$output[$frame_counter][$row_counter][$col_counter]["R"] = rand($minval, $maxval);
+				$output[$frame_counter][$row_counter][$col_counter]["G"] = rand($minval, $maxval);
+				$output[$frame_counter][$row_counter][$col_counter]["B"] = rand($minval, $maxval);
 			// En caso contrario generamos la media de los valores sumados y le añadimos la derivacion
 			}else{
 				$temp_val_r = round($sum_val_r / $count_sum) + $new_der_r;
@@ -210,22 +210,22 @@ for ($frame_counter=0; $frame_counter < $frames; $frame_counter++) {
 				$temp_val_b = round($sum_val_b / $count_sum) + $new_der_b;
 
 				// Revisamos que no nos salimos del valor maximo RGB
-				if ( $temp_val_r < 0){
-					$temp_val_r = 0;
-				}elseif ($temp_val_r > 255) {
-					$temp_val_r = 255;
+				if ( $temp_val_r < $minval){
+					$temp_val_r = $minval;
+				}elseif ($temp_val_r > $maxval) {
+					$temp_val_r = $maxval;
 				}
 
-				if ( $temp_val_g < 0){
-					$temp_val_g = 0;
-				}elseif ($temp_val_g > 255) {
-					$temp_val_g = 255;
+				if ( $temp_val_g < $minval){
+					$temp_val_g = $minval;
+				}elseif ($temp_val_g > $maxval) {
+					$temp_val_g = $maxval;
 				}
 
-				if ( $temp_val_b < 0){
-					$temp_val_b = 0;
-				}elseif ($temp_val_b > 255) {
-					$temp_val_b = 255;
+				if ( $temp_val_b < $minval){
+					$temp_val_b = $minval;
+				}elseif ($temp_val_b > $maxval) {
+					$temp_val_b = $maxval;
 				}
 
 
