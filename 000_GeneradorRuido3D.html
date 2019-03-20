@@ -12,7 +12,7 @@
 
 						var canvas = d3.select('body')
 							.append('canvas')
-							.style({position: 'absolute', width: json_data['cols'] + 'px', height: json_data['row'] + 'px'})
+							.style({position: 'absolute', width: window.innerWidth + 'px', height: window.innerHeight + 'px'})
 							.attr({width: json_data['cols'], height: json_data['row']})
 							.node();
 

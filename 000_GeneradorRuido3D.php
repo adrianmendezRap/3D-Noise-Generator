@@ -13,14 +13,14 @@ ini_set('memory_limit', '-1');
 ini_set('max_execution_time', 0);
 
 // Variables array
-$cols = 640;
-$row = 427;
-$frames = 1;
+$cols = 256;
+$row = 144;
+$frames = 15;
 
 // Valores a tener en cuenta
-$minval = 0;
-$maxval = 255;
-$maxder = 15;
+$minval = 0; // Como minimo puede ser 0
+$maxval = 200; // Como maximo puede ser 255
+$maxder = 24; // Entre 8 y 30 (puede subir hasta 255)
 
 // Array de salida
 $output = array();
